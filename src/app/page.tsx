@@ -1,65 +1,183 @@
-import Image from "next/image";
+import AboutSection from "@/components/AboutSection";
+import AiMlProjectsSection from "@/components/AiMlProjectsSection";
+import EducationSection from "@/components/EducationSection";
+import ExperienceSection from "@/components/ExperienceSection";
+import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
+import IndependentProjectsSection from "@/components/IndependentProjectsSection";
+import Navbar from "@/components/Navbar";
+import ProjectsSection from "@/components/ProjectsSection";
+import ResearchSection from "@/components/ResearchSection";
+import SkillsSection from "@/components/SkillsSection";
+
+const stats = [
+  "Live government clients",
+  "MS Software Engineering @ NUST",
+  "End-to-end SaaS and ML",
+  "Published research",
+];
+
+const skillCards = [
+  {
+    title: "Frontend Development",
+    items: ["React.js", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS"],
+  },
+  {
+    title: "Backend Development",
+    items: ["Node.js", "Express.js", "Python"],
+  },
+  {
+    title: "Databases",
+    items: ["MySQL", "Aiven Cloud (MySQL)", "Supabase"],
+  },
+  {
+    title: "AI / ML",
+    items: ["Groq LLM", "Model Fine-tuning", "NLP", "Machine Learning", "Streamlit", "n8n"],
+  },
+  {
+    title: "Tools",
+    items: ["Git", "GitHub", "REST APIs", "Vercel", "Railway", "Figma", "Canva", "GitHub Copilot", "Windsurf"],
+  },
+];
+
+const projects = [
+  {
+    title: "ISSB Website (Government Client)",
+    tech: ["Next.js", "Node.js", "Aiven Cloud MySQL"],
+    description:
+      "Delivered a fully functional, production-ready application to Inter Services Selection Board Pakistan government stakeholders, contributing to 80%+ of the full-stack application including REST APIs, dynamic UI, and database schema. Application is complete and finalized; awaiting official deployment after hosting and domain configuration.",
+    buttonLabel: "Live Demo",
+    href: "https://issb-sand.vercel.app/",
+  },
+  {
+    title: "FPCDL Dashboard (Government Client)",
+    tech: ["HTML5", "CSS", "JavaScript"],
+    description:
+      "Designed and built a comprehensive dashboard prototype for FPCDL, with branding, organizational imagery, and role-specific UI flows tailored to government administrative workflows. Submitted to stakeholders for approval; full-stack development will follow upon sign-off.",
+    buttonLabel: "Live Demo",
+    href: "https://fpsc-eight.vercel.app/",
+  },
+  {
+    title: "Inotech Solutions Website",
+    tech: ["HTML", "CSS", "JavaScript"],
+    description:
+      "Independently designed and developed the Hardware and Software project sections of the Inotech company website, improving frontend structure, navigation, sector-based filtering UI, and overall interface quality.",
+    buttonLabel: "Live Demo",
+    href: "https://inotech.vercel.app/hardware/hardware.html",
+  },
+  {
+    title: "PAGB Website (Pakistan Army Green Book)",
+    tech: ["Next.js", "Node.js", "UI/UX"],
+    description:
+      "Designed and deployed a fully responsive, production-ready UI/UX for pagb.org.pk, a live government platform serving Pakistan Army academic and military research publication needs. Developed and deployed 3+ functional modules and contributed to ongoing maintenance in an Agile team.",
+    buttonLabel: "Live Demo",
+    href: "https://pagb.org.pk",
+  },
+];
+
+const experience = [
+  {
+    role: "Software Engineer Intern, Inotech Solutions",
+    period: "09/2025 - Present",
+    points: [
+      "Built and delivered a full-stack prototype directly to government client ISSB using Next.js, Node.js, and Aiven Cloud (MySQL), independently contributing to 80%+ of the application.",
+      "Developed and deployed 3+ live modules on PAGB (pagb.org.pk), collaborating in an Agile team via Git workflows and code reviews.",
+      "Designed and built an HTML5, CSS, and JavaScript dashboard prototype for FPCDL submitted to client stakeholders for design approval.",
+      "Developed responsive UI/UX components and integrated REST APIs across multiple client projects, improving reusability and reducing frontend delivery time.",
+      "Independently built the Hardware and Software sections of the Inotech company website using HTML, CSS, and JavaScript, improving frontend structure and navigation.",
+    ],
+  },
+  {
+    role: "Freelance UI/UX & Frontend Designer",
+    period: "03/2025 - 07/2025",
+    points: [
+      "Designed branded social media content for Vriopi, strengthening online visual identity and engagement.",
+      "Created interactive, age-appropriate digital templates for Cedar School (Dubai) to improve classroom engagement.",
+    ],
+  },
+];
+
+const education = [
+  {
+    degree: "MS Software Engineering",
+    institution: "NUST Military College of Signals",
+    period: "09/2025 - Present",
+    location: "Rawalpindi, PK",
+    grade: "3.19/4",
+    description: "Pursuing postgraduate studies alongside active industry internship.",
+  },
+  {
+    degree: "BS Information Technology",
+    institution: "University of Sargodha",
+    period: "2021 - 2025",
+    location: "Pakistan",
+    grade: "3.01/4",
+    description: "Strong foundation in software engineering, data structures, and algorithms.",
+  },
+];
+
+const independentProjects = [
+  {
+    title: "Smart Hire - AI-Powered Hiring Platform (SaaS)",
+    tech: ["Next.js", "Node.js", "Supabase", "Groq LLM", "Vercel", "Railway"],
+    description:
+      "Built an end-to-end AI hiring platform with resume parsing, Groq LLM integration, JWT authentication, and fit scoring, demonstrating full SaaS product ownership. Deployed on Vercel and Railway with a PDF parsing pipeline to extract and score candidate profiles automatically.",
+    href: "https://smarthire-ai-lrq8.vercel.app/",
+  },
+  {
+    title: "AI Data Dashboard",
+    tech: ["Python", "Streamlit", "Machine Learning"],
+    description:
+      "Built an ML-powered analytics dashboard with live data visualization and integrated ML-based insights; deployed live on Streamlit Cloud.",
+    href: "https://fullstackai-datadashboard-i6dmrjappwxmesm2nv9m7pg.streamlit.app/",
+  },
+  {
+    title: "Image Classification",
+    tech: ["Machine Learning", "Transfer Learning"],
+    description:
+      "Fine-tuned a deep learning model for multi-class image classification using transfer learning, improving prediction accuracy across test sets.",
+  },
+  {
+    title: "News Classification (n8n Workflow)",
+    tech: ["n8n", "AI Models", "Automation"],
+    description:
+      "Built an automated news categorization pipeline integrating AI models into an n8n workflow for real-time processing.",
+  },
+];
+
+const aiMlProjects = [
+  {
+    title: "Image Classification",
+    description:
+      "Fine-tuned a deep learning model for multi-class image classification using transfer learning, improving prediction accuracy across test sets.",
+  },
+  {
+    title: "News Classification (n8n Workflow)",
+    description:
+      "Built an automated news categorization pipeline integrating AI models into an n8n workflow for real-time processing.",
+  },
+  {
+    title: "AI Model POCs & Testing",
+    description:
+      "Conducted structured experiments on LLM and ML models and produced performance benchmarking reports comparing model outputs.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="relative overflow-hidden">
+      <div className="hero-noise pointer-events-none absolute inset-0" />
+      <Navbar />
+      <HeroSection />
+      <AboutSection stats={stats} />
+      <ExperienceSection items={experience} />
+      <EducationSection items={education} />
+      <SkillsSection cards={skillCards} />
+      <ProjectsSection projects={projects} />
+      <IndependentProjectsSection items={independentProjects} />
+      <AiMlProjectsSection items={aiMlProjects} />
+      <ResearchSection />
+      <Footer />
+    </main>
   );
 }
