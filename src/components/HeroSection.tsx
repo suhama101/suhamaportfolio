@@ -4,34 +4,38 @@ import profilePic from "./pic.jpeg";
 
 export default function HeroSection() {
   return (
-    <section id="home" className="section-shell pt-16 sm:pt-24">
-      <div className="mx-auto grid max-w-7xl gap-12 px-4 pb-24 pt-8 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:pb-32 lg:pt-16">
-        <div className="flex flex-col justify-center">
+    <section id="home" className="section-shell pt-10 sm:pt-14">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 pb-20 pt-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:px-8 lg:pb-28 lg:pt-10">
+        <div className="flex flex-col justify-start pt-6 sm:pt-10 lg:pt-16">
+          <div className="inline-flex w-fit items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-2 text-xs font-medium uppercase tracking-[0.28em] text-[#6f5c4f] shadow-sm backdrop-blur">
+            <span className="h-2 w-2 rounded-full bg-[#b25f35]" />
+            Open to internships and freelance work
+          </div>
           <p className="section-eyebrow">Full Stack Developer | AI-Driven Development</p>
-          <h1 className="mt-5 max-w-4xl font-display text-5xl font-semibold tracking-tight text-[#111111] sm:text-6xl lg:text-7xl">
+          <h1 className="mt-4 max-w-4xl font-display text-5xl font-semibold tracking-tight text-[#111111] sm:text-6xl lg:text-7xl">
             Hi, I am Suhama Mustafa
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-[#4d433a] sm:text-lg">
+          <p className="mt-5 max-w-2xl text-base leading-8 text-[#4d433a] sm:text-lg">
             Full Stack Developer with production experience building AI-powered web applications for live government clients, SaaS products, and ML projects.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-7 flex flex-wrap gap-3">
             <a href="#projects" className="btn-primary">
               Explore Projects
             </a>
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-3 text-sm text-slate-200">
+          <div className="mt-8 flex flex-wrap gap-3 text-sm text-slate-200">
             <span className="pill">Rawalpindi, Pakistan</span>
             <span className="pill">MS Software Engineering @ NUST</span>
             <span className="pill">Government Client Delivery</span>
           </div>
         </div>
 
-        <div className="relative flex items-center justify-center">
-          <div className="hero-card relative w-full max-w-xl overflow-hidden rounded-[2rem] border border-black/10 bg-white/55 p-6 shadow-2xl shadow-[rgba(14,14,14,0.08)] backdrop-blur-xl sm:p-8">
+        <div className="relative flex items-start justify-center pt-0 lg:pt-6">
+          <div className="hero-card relative w-full max-w-xl overflow-hidden rounded-[2rem] border border-black/10 bg-white/55 p-5 shadow-2xl shadow-[rgba(14,14,14,0.08)] backdrop-blur-xl sm:p-7">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(178,95,53,0.12),transparent_40%),radial-gradient(circle_at_bottom_right,rgba(127,158,105,0.14),transparent_45%)]" />
-            <div className="relative space-y-6">
+            <div className="relative space-y-5">
               <div className="overflow-hidden rounded-[1.75rem] border border-black/10 bg-[#fbf8f2]">
                 <div className="relative aspect-[4/5] w-full">
                   <Image
