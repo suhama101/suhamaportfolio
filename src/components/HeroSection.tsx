@@ -1,3 +1,7 @@
+import Image from "next/image";
+
+import profilePic from "./pic.jpeg";
+
 export default function HeroSection() {
   return (
     <section id="home" className="section-shell pt-16 sm:pt-24">
@@ -28,6 +32,19 @@ export default function HeroSection() {
           <div className="hero-card relative w-full max-w-xl overflow-hidden rounded-[2rem] border border-black/10 bg-white/55 p-6 shadow-2xl shadow-[rgba(14,14,14,0.08)] backdrop-blur-xl sm:p-8">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(178,95,53,0.12),transparent_40%),radial-gradient(circle_at_bottom_right,rgba(127,158,105,0.14),transparent_45%)]" />
             <div className="relative space-y-6">
+              <div className="overflow-hidden rounded-[1.75rem] border border-black/10 bg-[#fbf8f2]">
+                <div className="relative aspect-[4/5] w-full">
+                  <Image
+                    src={profilePic}
+                    alt="Suhama Mustafa portrait"
+                    fill
+                    priority
+                    className="object-cover object-top"
+                    sizes="(max-width: 640px) 100vw, 480px"
+                  />
+                </div>
+              </div>
+
               <div className="rounded-3xl border border-black/10 bg-[#fbf8f2]/90 p-5">
                 <p className="text-sm uppercase tracking-[0.35em] text-[#b25f35]">Profile</p>
                 <div className="mt-4 grid gap-4 sm:grid-cols-2">
