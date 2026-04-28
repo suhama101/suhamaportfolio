@@ -8,13 +8,26 @@ import IndependentProjectsSection from "@/components/IndependentProjectsSection"
 import Navbar from "@/components/Navbar";
 import ProjectsSection from "@/components/ProjectsSection";
 import ResearchSection from "@/components/ResearchSection";
+import ScrollEffects from "@/components/ScrollEffects";
 import SkillsSection from "@/components/SkillsSection";
 
-const stats = [
-  "Live government clients",
-  "MS Software Engineering @ NUST",
-  "End-to-end SaaS and ML",
-  "Published research",
+const heroStats = [
+  {
+    value: 2,
+    label: "Live government clients",
+  },
+  {
+    value: 1,
+    label: "MS Software Engineering @ NUST",
+  },
+  {
+    value: 4,
+    label: "End-to-end SaaS and ML",
+  },
+  {
+    value: 2,
+    label: "Research items in progress",
+  },
 ];
 
 const skillCards = [
@@ -45,9 +58,9 @@ const projects = [
     title: "ISSB Website (Government Client)",
     tech: ["Next.js", "Node.js", "Aiven Cloud MySQL"],
     description:
-      "Delivered a fully functional, production-ready application to Inter Services Selection Board Pakistan government stakeholders, contributing to 80%+ of the full-stack application including REST APIs, dynamic UI, and database schema. Application is complete and finalized; awaiting official deployment after hosting and domain configuration.",
+      "Delivered a fully functional, production-ready application to Inter Services Selection Board Pakistan government stakeholders, contributing to 80%+ of the full-stack application including REST APIs, dynamic UI, and database schema alongside senior teammates. The application is now deployed at issb.gov.pk with hosting and domain configuration complete.",
     buttonLabel: "Live Demo",
-    href: "https://issb-sand.vercel.app/",
+    href: "https://issb.gov.pk/",
   },
   {
     title: "FPCDL Dashboard (Government Client)",
@@ -80,7 +93,7 @@ const experience = [
     role: "Software Engineer Intern, Inotech Solutions",
     period: "09/2025 - Present",
     points: [
-      "Built and delivered a full-stack prototype directly to government client ISSB using Next.js, Node.js, and Aiven Cloud (MySQL), independently contributing to 80%+ of the application.",
+      "Built and delivered a full-stack prototype directly to government client ISSB using Next.js, Node.js, and Aiven Cloud (MySQL), contributing to 80%+ of the application alongside senior teammates.",
       "Developed and deployed 3+ live modules on PAGB (pagb.org.pk), collaborating in an Agile team via Git workflows and code reviews.",
       "Designed and built an HTML5, CSS, and JavaScript dashboard prototype for FPCDL submitted to client stakeholders for design approval.",
       "Developed responsive UI/UX components and integrated REST APIs across multiple client projects, improving reusability and reducing frontend delivery time.",
@@ -165,11 +178,11 @@ const aiMlProjects = [
 
 export default function Home() {
   return (
-    <main className="relative overflow-hidden">
-      <div className="hero-noise pointer-events-none absolute inset-0" />
+    <main className="site-main overflow-hidden">
       <Navbar />
-      <HeroSection />
-      <AboutSection stats={stats} />
+      <ScrollEffects />
+      <HeroSection stats={heroStats} />
+      <AboutSection />
       <ExperienceSection items={experience} />
       <EducationSection items={education} />
       <SkillsSection cards={skillCards} />

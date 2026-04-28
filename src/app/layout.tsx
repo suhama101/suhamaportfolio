@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Sora, Space_Grotesk } from "next/font/google";
+import { Instrument_Serif, Inter } from "next/font/google";
 import "./globals.css";
 
-const sora = Sora({
-  variable: "--font-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-display",
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument",
   subsets: ["latin"],
+  weight: ["400"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -24,11 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${sora.variable} ${spaceGrotesk.variable} h-full scroll-smooth antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={`${inter.variable} ${instrumentSerif.variable} antialiased`}>
+      <body className="min-h-full bg-[var(--bg)] text-[var(--text-primary)]">{children}</body>
     </html>
   );
 }

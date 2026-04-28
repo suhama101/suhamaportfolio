@@ -1,21 +1,25 @@
+import type { ReactNode } from "react";
+
 type SectionHeadingProps = {
+  number: string;
   eyebrow: string;
-  title: string;
+  title: ReactNode;
   description: string;
 };
 
 export default function SectionHeading({
+  number,
   eyebrow,
   title,
   description,
 }: SectionHeadingProps) {
   return (
-    <div className="mx-auto max-w-3xl text-center">
-      <p className="section-eyebrow">{eyebrow}</p>
-      <h2 className="section-title mt-4">{title}</h2>
-      <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#4d433a] sm:text-base">
-        {description}
+    <div data-reveal className="section-heading">
+      <p className="section-label">
+        {number} — {eyebrow}
       </p>
+      <h2 className="section-title">{title}</h2>
+      <p className="section-description">{description}</p>
     </div>
   );
 }
